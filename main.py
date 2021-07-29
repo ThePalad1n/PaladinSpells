@@ -133,12 +133,13 @@ def melee():
       print(" Dex Save Success: Y/N")
       save = input("Enter: ")
       if save == "Y" or save =="y":
-        print("You dealt {} force damage!".format(roll))
+        rolla = roll / 2
+        print("You dealt {} force damage!".format(rolla))
+        
         print()
         menu()
       elif save == "N" or save =="n":
-        rolla = roll / 2
-        print("You dealt {} force damage!".format(rolla))
+        print("You dealt {} force damage!".format(roll))
         print()
         menu()
       else:
