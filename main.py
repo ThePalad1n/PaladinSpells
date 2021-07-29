@@ -1,6 +1,5 @@
 #Damage list for my Paladin DnD
 #todo:
-# add "is undead/fiend" to smite option
 
 import csv
 import sys
@@ -11,6 +10,7 @@ def main():
 
 
 def menu():
+  print()
   print("************Damage Rolls**************")
   print()
 
