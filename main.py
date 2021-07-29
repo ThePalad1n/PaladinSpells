@@ -3,6 +3,9 @@
 # add smite option to weapon attack
 # add attack roll
 # add "is undead/fiend" to smite option
+#complete rewrite options as follow:
+#        type r to roll
+#        choose main second cantrip other 
 
 import csv
 import sys
