@@ -1,6 +1,5 @@
 #Damage list for my Paladin DnD
 #todo:
-# add smite option to weapon attack
 # add attack roll
 # add "is undead/fiend" to smite option
 #complete rewrite options as follow:
@@ -19,13 +18,14 @@ def menu():
   print("************Damage Rolls**************")
   print()
 
-  print(" A: Attack \n Q: Quit\n")
+  print(" A: Attack \n R: Roll \n Q: Quit\n")
   choice = input("Enter: ")
   print()
 
   if choice == "A" or choice =="a":
       melee()
-
+  elif choice=="R" or choice=="r":
+      roll()
   elif choice=="Q" or choice=="q":
       sys.exit
   else:
@@ -160,5 +160,11 @@ def melee():
       print("Please try again")
       print()
       melee()
+
+def roll():
+  roll = random.randint(1, 20)
+  print("You rolled a {}".format(roll))
+  print()
+  menu()
 
 main()
