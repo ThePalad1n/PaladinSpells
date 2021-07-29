@@ -1,10 +1,6 @@
 #Damage list for my Paladin DnD
 #todo:
-# add attack roll
 # add "is undead/fiend" to smite option
-#complete rewrite options as follow:
-#        type r to roll
-#        choose main second cantrip other 
 
 import csv
 import sys
@@ -54,9 +50,24 @@ def melee():
       if slot == "Y" or slot =="y":
         rollsc = random.randint(1, 8)
         rolls = rollsa + rollsb + rollsc
-        print("You dealt {} slashing damage and {} radiant damage!".format(rolla, rolls))
-        print()
-        menu()
+        print(" Is undead of fiend? Y/N")
+        ded = input("Enter: ")
+        if ded == "Y" or ded =="y":
+          rollsd = random.randint(1, 8)
+          rollz = rolls + rollsd
+          print("You dealt {} slashing damage and {} radiant damage!".format(rolla, rollz))
+          print()
+          menu()
+        elif slot == "N" or slot =="n":
+          rolls = rollsa + rollsb + rollsc
+          print("You dealt {} slashing damage and {}radiant damage!".format(rolla, rolls))
+          print()
+          menu()
+        else:
+          print("You must select a valid option")
+          print("Please try again")
+          print()
+          melee()
       elif slot == "N" or slot =="n":
         rolls = rollsa + rollsb
         print("You dealt {} slashing damage and {} radiant damage!".format(rolla, rolls))
