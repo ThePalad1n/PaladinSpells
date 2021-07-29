@@ -39,6 +39,7 @@ def melee():
       print("You dealt {} slashing damage!".format(rolla))
       print()
       menu()
+
   elif choice == "B" or choice =="b":
       roll = random.randint(1, 4)
       bonus = 2
@@ -46,16 +47,20 @@ def melee():
       print("You dealt {} slashing damage!".format(rolla))
       print()
       menu()
+
   elif choice == "C" or choice =="c":
       roll = random.randint(1, 10)
       print("You dealt {} blunt damage!".format(roll))
       print()
       menu()
+
   elif choice == "Z" or choice =="z":
     print()
     menu()
+
   elif choice=="Q" or choice=="q":
       sys.exit
+
   else:
       print("You must select a valid option")
       print("Please try again")
@@ -68,18 +73,57 @@ def spells():
   print()
 
   if choice == "A" or choice =="a":
-      #add math for roll
-      print(roll)
+      roll = random.randint(1, 4)
+      print(" Dex Save Success: Y/N")
+      save = input("Enter: ")
+      if save == "Y" or save =="y":
+        print("You dealt {} force damage!".format(roll))
+        print()
+        menu()
+      elif save == "N" or save =="n":
+        rolla = roll / 2
+        print("You dealt {} force damage!".format(rolla))
+        print()
+        menu()
+      else:
+        print("You must select a valid option")
+        print("Please try again")
+        print()
+        spells()
+
   elif choice == "B" or choice =="b":
-        #add math for roll
-      print(roll)
+      rolla = random.randint(1, 8)
+      rollb = random.randint(1, 8)
+      print(" Lvl 2 spell slot: Y/N")
+      slot = input("Enter: ")
+      if slot == "Y" or slot =="y":
+        rollc = random.randint(1, 8)
+        roll = rolla + rollb + rollc
+        print("You dealt {} radiant damage!".format(roll))
+        print()
+        menu()
+      elif slot == "N" or slot =="n":
+        roll = rolla + rollb
+        print("You dealt {} radiant damage!".format(roll))
+        print()
+        menu()
+      else:
+        print("You must select a valid option")
+        print("Please try again")
+        print()
+        spells()
+
   elif choice == "Z" or choice =="z":
-      menu()
+    print()
+    menu()
+
   elif choice=="Q" or choice=="q":
       sys.exit
+
   else:
       print("You must select a valid option")
       print("Please try again")
+      print()
       spells()
     
 main()
