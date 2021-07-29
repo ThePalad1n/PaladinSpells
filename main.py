@@ -1,4 +1,9 @@
 #Damage list for my Paladin DnD
+#todo:
+# add smite option to weapon attack
+# add attack roll
+# add "is undead/fiend" to smite option
+
 import csv
 import sys
 import random
