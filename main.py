@@ -57,6 +57,27 @@ def melee():
         melee()
     
 def spells():
-   pass
+      choice = input("""
+                      A: Almighty Push
+                      B: Smite
+                      Q: Quit
+                      Z: Back
+
+                      Please enter your choice: """)
+
+    if choice == "A" or choice =="a":
+      #add math for roll
+        print(roll)
+    elif choice == "B" or choice =="b":
+        #add math for roll
+        print(roll)
+    elif choice == "Z" or choice =="z":
+        menu()
+    elif choice=="Q" or choice=="q":
+        sys.exit
+    else:
+        print("You must select a valid option")
+        print("Please try again")
+        spells()
     
 main()
