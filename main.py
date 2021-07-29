@@ -19,14 +19,13 @@ def menu():
   print("************Damage Rolls**************")
   print()
 
-  print(" A: Melee \n B: Spells\n Q: Quit\n")
+  print(" A: Attack \n Q: Quit\n")
   choice = input("Enter: ")
   print()
 
   if choice == "A" or choice =="a":
       melee()
-  elif choice == "B" or choice =="b":
-      spells()
+
   elif choice=="Q" or choice=="q":
       sys.exit
   else:
@@ -36,25 +35,92 @@ def menu():
 
 def melee():
 
-  print(" A: Battle Axe \n B: Sickle\n C: Punch\n Q: Quit\n Z: Back\n")
+  print(" A: Battle Axe \n B: Sickle\n C: Punch\n D: Cantrip\n Q: Quit\n Z: Back\n")
   choice = input("Enter: ")
   print()
 
   if choice == "A" or choice =="a":
+    print("Would you like to use smite?: Y/N")
+    smite = input("Enter: ")
+    print()
+    if smite == "Y" or smite =="y":
       roll = random.randint(1, 8)
       bonus = 2
       rolla = roll + bonus
+      rollsa = random.randint(1, 8)
+      rollsb = random.randint(1, 8)
+      print(" Lvl 2 spell slot: Y/N")
+      slot = input("Enter: ")
+      if slot == "Y" or slot =="y":
+        rollsc = random.randint(1, 8)
+        rolls = rollsa + rollsb + rollsc
+        print("You dealt {} slashing damage and {} radiant damage!".format(rolla, rolls))
+        print()
+        menu()
+      elif slot == "N" or slot =="n":
+        rolls = rollsa + rollsb
+        print("You dealt {} slashing damage and {} radiant damage!".format(rolla, rolls))
+        print()
+        menu()
+      else:
+        print("You must select a valid option")
+        print("Please try again")
+        print()
+        menu()
+    elif smite == "N" or smite =="n":
+      roll = random.randint(1, 8)
+      bonus = 2
+      rolla = roll + bonus 
       print("You dealt {} slashing damage!".format(rolla))
       print()
       menu()
+    else:
+      print("You must select a valid option")
+      print("Please try again")
+      print()
+      melee()
+
 
   elif choice == "B" or choice =="b":
+    print("Would you like to use smite?: Y/N")
+    smite = input("Enter: ")
+    print()
+    if smite == "Y" or smite =="y":
       roll = random.randint(1, 4)
       bonus = 2
       rolla = roll + bonus
+      rollsa = random.randint(1, 8)
+      rollsb = random.randint(1, 8)
+      print(" Lvl 2 spell slot: Y/N")
+      slot = input("Enter: ")
+      if slot == "Y" or slot =="y":
+        rollsc = random.randint(1, 8)
+        rolls = rollsa + rollsb + rollsc
+        print("You dealt {} slashing damage and {} radiant damage!".format(rolla, rolls))
+        print()
+        menu()
+      elif slot == "N" or slot =="n":
+        rolls = rollsa + rollsb
+        print("You dealt {} slashing damage and {} radiant damage!".format(rolla, rolls))
+        print()
+        menu()
+      else:
+        print("You must select a valid option")
+        print("Please try again")
+        print()
+        menu()
+    elif smite == "N" or smite =="n":
+      roll = random.randint(1, 4)
+      bonus = 2
+      rolla = roll + bonus 
       print("You dealt {} slashing damage!".format(rolla))
       print()
       menu()
+    else:
+      print("You must select a valid option")
+      print("Please try again")
+      print()
+      melee()
 
   elif choice == "C" or choice =="c":
       roll = random.randint(1, 10)
@@ -62,25 +128,7 @@ def melee():
       print()
       menu()
 
-  elif choice == "Z" or choice =="z":
-    print()
-    menu()
-
-  elif choice=="Q" or choice=="q":
-      sys.exit
-
-  else:
-      print("You must select a valid option")
-      print("Please try again")
-      print()
-      melee()
-    
-def spells():
-  print(" A: Almighty Push\n B: Smite\n Q: Quit\n Z: Back\n")
-  choice = input("Enter: ")
-  print()
-
-  if choice == "A" or choice =="a":
+  elif choice == "D" or choice =="d":
       roll = random.randint(1, 4)
       print(" Dex Save Success: Y/N")
       save = input("Enter: ")
@@ -97,29 +145,7 @@ def spells():
         print("You must select a valid option")
         print("Please try again")
         print()
-        spells()
-
-  elif choice == "B" or choice =="b":
-      rolla = random.randint(1, 8)
-      rollb = random.randint(1, 8)
-      print(" Lvl 2 spell slot: Y/N")
-      slot = input("Enter: ")
-      if slot == "Y" or slot =="y":
-        rollc = random.randint(1, 8)
-        roll = rolla + rollb + rollc
-        print("You dealt {} radiant damage!".format(roll))
-        print()
         menu()
-      elif slot == "N" or slot =="n":
-        roll = rolla + rollb
-        print("You dealt {} radiant damage!".format(roll))
-        print()
-        menu()
-      else:
-        print("You must select a valid option")
-        print("Please try again")
-        print()
-        spells()
 
   elif choice == "Z" or choice =="z":
     print()
@@ -132,6 +158,6 @@ def spells():
       print("You must select a valid option")
       print("Please try again")
       print()
-      spells()
-    
+      melee()
+
 main()
