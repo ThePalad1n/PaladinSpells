@@ -173,9 +173,59 @@ def melee():
       melee()
 
 def roll():
-  roll = random.randint(1, 20)
-  print("You rolled a {}".format(roll))
-  print()
-  menu()
 
+  print(" A: d20 \n B: d12\n C: d10\n D: d8\n E: d6\n F: d4\n G: d2\n Q: Quit\n")
+  choice = input("Enter: ")
+  print()
+  if choice == "A" or choice =="a":
+    roll = random.randint(1, 20)
+    print("You rolled a {}".format(roll))
+    print()
+    menu()
+
+  elif choice == "B" or choice =="b":
+    roll = random.randint(1, 12)
+    print("You rolled a {}".format(roll))
+    print()
+    menu()
+
+  elif choice == "C" or choice =="c":
+    roll = random.randint(1, 10)
+    print("You rolled a {}".format(roll))
+    print()
+    menu()
+
+  elif choice == "D" or choice =="d":
+    roll = random.randint(1, 8)
+    print("You rolled a {}".format(roll))
+    print()
+    menu()
+
+  elif choice == "E" or choice =="e":
+    roll = random.randint(1, 6)
+    print("You rolled a {}".format(roll))
+    print()
+    menu()
+
+
+  elif choice == "F" or choice =="f":
+    roll = random.randint(1, 4)
+    print("You rolled a {}".format(roll))
+    print()
+    menu()
+
+  elif choice == "G" or choice =="g":
+    roll = random.randint(1, 2)
+    print("You rolled a {}".format(roll))
+    print()
+    menu()
+
+  elif choice=="Q" or choice=="q":
+      sys.exit
+
+  else:
+      print("You must select a valid option")
+      print("Please try again")
+      print()
+      menu()
 main()
