@@ -19,7 +19,7 @@ def menu():
   print()
 
   if choice == "A" or choice =="a":
-      melee()
+      attack()
   elif choice=="R" or choice=="r":
       roll()
   elif choice=="Q" or choice=="q":
@@ -29,7 +29,7 @@ def menu():
     print("Please try again")
     menu()
 
-def melee():
+def attack():
 
   print(" A: Battle Axe \n B: Sickle\n C: Punch\n D: Cantrip\n Q: Quit\n Z: Back\n")
   choice = input("Enter: ")
@@ -67,7 +67,7 @@ def melee():
           print("You must select a valid option")
           print("Please try again")
           print()
-          melee()
+          attack()
       elif slot == "N" or slot =="n":
         rolls = rollsa + rollsb
         print("You dealt {} slashing damage and {} radiant damage!".format(rolla, rolls))
@@ -89,7 +89,7 @@ def melee():
       print("You must select a valid option")
       print("Please try again")
       print()
-      melee()
+      attack()
 
 
   elif choice == "B" or choice =="b":
@@ -131,7 +131,7 @@ def melee():
       print("You must select a valid option")
       print("Please try again")
       print()
-      melee()
+      attack()
 
   elif choice == "C" or choice =="c":
       roll = random.randint(1, 10)
@@ -170,7 +170,7 @@ def melee():
       print("You must select a valid option")
       print("Please try again")
       print()
-      melee()
+      attack()
 
 def roll():
 
