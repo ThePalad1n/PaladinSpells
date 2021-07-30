@@ -3,6 +3,7 @@
 import csv
 import sys
 import random
+import DnD4py
 
 def main():
   menu()
@@ -13,12 +14,14 @@ def menu():
   print("************Damage Rolls**************")
   print()
 
-  print(" A: Attack \n R: Roll \n Q: Quit\n")
+  print(" A: Attack \n I: Info \n R: Roll \n Q: Quit\n")
   choice = input("Enter: ")
   print()
 
   if choice == "A" or choice =="a":
       attack()
+  elif choice=="I" or choice=="i":
+      info()
   elif choice=="R" or choice=="r":
       roll()
   elif choice=="Q" or choice=="q":
@@ -170,6 +173,39 @@ def attack():
       print("Please try again")
       print()
       attack()
+
+
+def info():
+
+  print(" A: Item \n B: Spell\n C: Monster\n Q: Quit\n")
+  choice = input("Enter Lookup Type: ")
+  print()
+  
+  if choice == "A" or choice =="a":
+    print("What item are we looking up? ")
+    item = input("Enter Lookup: ")
+    print()
+
+  elif choice == "B" or choice =="b":
+    print("What monster are we looking up? ")
+    monster = input("Enter Lookup: ")
+
+  elif choice == "C" or choice =="c":
+    print("What spell are we looking up? ")
+    spell = input("Enter Lookup: ")
+
+  elif choice=="Q" or choice=="q":
+      sys.exit
+
+  else:
+      print("You must select a valid option")
+      print("Please try again")
+      print()
+      menu()
+
+
+
+
 
 def roll():
 
