@@ -14,7 +14,7 @@ def menu():
   print("************Damage Rolls**************")
   print()
 
-  print(" A: Attack \n I: Info \n R: Roll \n Q: Quit\n")
+  print(" A: Attack \n I: Info(in progress) \n R: Roll \n Q: Quit\n")
   choice = input("Enter: ")
   print()
 
@@ -176,7 +176,9 @@ def attack():
 
 
 def info():
-
+  print("Sorry still under construction :D")
+  print()
+  menu()
   print(" A: Item \n B: Spell\n C: Monster\n Q: Quit\n")
   choice = input("Enter Lookup Type: ")
   print()
