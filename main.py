@@ -1,5 +1,4 @@
 #Damage list for my Paladin DnD
-#todo:
 
 import csv
 import sys
